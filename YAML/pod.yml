@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: techchallenge5pod
+  labels:
+    app: techchallenge5pod
+spec: 
+  containers:
+    - name: rabbitmq
+      image: masstransit/rabbitmq
+      ports:
+      - name: http
+        protocol: TCP
+        containerPort: 15672
+      - name: amqp
+        protocol: TCP
+        containerPort: 5672
+    - name: apiproducer
+      image: tiagoguarda/apiproducer
+      ports:
+      - name: http 
+        protocol: TCP
+        containerPort: 80
+      - name: https 
+        protocol: TCP
+        containerPort: 443
+    - name: workerconsumer
+      image: tiagoguarda/workerconsumer
+    
