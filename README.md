@@ -1,1 +1,2 @@
-# TechChallenge5
+# Tech Challenge 5
+Projeto de um sistema baseado em mensageria, contendo um producer (API) e um consumer (Worker) utilizando o rabbitMQ com o framework massTransit para a comunicação. Todo o projeto foi implementado utilizando um cluster kubernetes local, com uma pod contendo 3 containers: rabbitmq (masstransit/rabbitmq), API (tiagoguarda/apiproducer) e Consumer (tiagoguarda/workerconsumer). As imagens da API e do Consumer, estão utilizando um script para o entrypoint com a finalidade de gerar um delay de 5 segundos na inicialização, necessários para que o container do rabbitmq seja inicializado corretamente. 
